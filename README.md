@@ -1,5 +1,5 @@
 <h1>Angular Global click event listener</h1>
-It's easy to register an event listerner but not that much easy to trigger an event with clicking outside the box. Most usage is to close a popup, which is opened by clicking on a button, by clicking outside that button.
+It's easy to register an event listerner but not that much easy to trigger an event with clicking outside the box. Most usage is to close a popup, which is opened by clicking on a button, when clicking outside that button.
 <br>
 <br>
 This library make it easier as you don't need to maintain any function to handle the event, just simply code expression within the element.
