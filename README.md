@@ -1,37 +1,27 @@
 <h1>Angular Global click event listener</h1>
-Poping up an alert window is the most popular way to confirm a button action, which is anoying sometimes. This idea for In-Place-Confirm Button is to get rid of space wasting and get clearer vision to confirm an action.
-
-Demo: [Angular In-Place-Confirm Button Demo](http://app.bill-min.com/ng-in-place-confirm-btn/)
-
+It's easy to register an event listerner but not that much easy to trigger an event with clicking outside the box. Most usage is to close a popup, which is opened by clicking on a button, by clicking outside that button.
+<br>
+<br>
+This library make it easier as you don't need to maintain any function to handle the event, just simply code expression within the element.
+<br>
+<br>
+Demo: [Angular ng-global-click Demo](http://app.bill-min.com/ng-global-click/)
+<br>
+<br>
 Usage:
 ```
-angular.module('myApp', ['ngInPlaceConfirmBtn'])
+angular.module('myApp', ['ngGlobalClick'])
 ```
 
 ```
-<ng-in-place-confirm-btn option="option" submit="submit"></ng-in-place-confirm-btn>
+//Normally you register the trigger in <body> element
+<body global-click-trigger>
+</body>
 ```
 
-```
-$scope.option = 
-{
-    yourID: 'btn-id',
-    name: 'My IPC Button',
-    hasInputBox: true,
-    placeholder: '(required) This is placeholder',
-    tooltip: 'This is a tooltip This is a tooltip This is a tooltip This is a tooltip This is a tooltip This is a tooltip This is a tooltip',
-    tooltipDirection: 'right',
-    inputBoxName: 'myInput',
-    inputRequired: true
-};
+Register events that will happen when clicking outside of the element
 
-$scope.submit = function () {
-    $scope.submit = function (input, btnOption) {
-        $scope.$broadcast('submitting');
-        $timeout(function () {
-            $scope.$broadcast('submitted');
-            window.alert("Your ID for this Button is: " + btnOption.yourID + ". Your input is: " + input);
-        }, 1000);
-    }
-}
+```
+<your-element on-global-click="expression"></your-element>
+
 ```
