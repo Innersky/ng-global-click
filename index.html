@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My AngularJS App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+</head>
+<body ng-controller="myCtrl" global-click-trigger>
+<div class="container">
+    <div style="margin-left: auto; margin-right: auto; width: 500px; height: 300px; margin-top: 50px; border: 1px solid #ccc" on-global-click="count = count + 1">
+        <p>This box is registered with <code>on-global-click="count++"</code></p>
+        <p>Please click outside/inside of the box (body tag), where <code>global-click-trigger</code> registered!</p>
+        <p>You clicked outside {{count}} times!</p>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+<script src="src/ng-global-click.js"></script>
+<script>
+    angular.module('myApp', ['ngGlobalClick'])
+            .controller('myCtrl', function ($scope) {
+                $scope.count = 0;
+            });
+</script>
+</body>
+</html>
