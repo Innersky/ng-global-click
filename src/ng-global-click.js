@@ -9,16 +9,16 @@
     function globalClickTriggerFunc() {
         return {
             restrict: 'A',
-            link: function (scope) {
+            link: function (scope, element) {
                 function onClick(e) {
                     scope.$broadcast('globalClickTrigger::click', e.target);
                 }
 
                 function cleanUp() {
-                    angular.element(document).off('mous', onClick);
+                    angular.element(element).off('click touchstart', onClick);
                 }
 
-                angular.element(document).on('click', onClick);
+                angular.element(element).on('click touchstart', onClick);
                 scope.$on('$destroy', cleanUp);
 
             }

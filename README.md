@@ -5,6 +5,9 @@ It's easy to register an event listerner but not that much easy to trigger an ev
 This library make it easier as you don't need to maintain any function to handle the event, just simply code expression within the element.
 <br>
 <br>
+It registers <code>touchstart</code> for touch devices.
+<br>
+<br>
 Demo: [Angular ng-global-click Demo](http://app.bill-min.com/ng-global-click/)
 <br>
 <br>
