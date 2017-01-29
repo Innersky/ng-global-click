@@ -6,7 +6,7 @@
         .directive('onGlobalClick', onGlobalClickFunc);
 
 
-    function globalClickTriggerFunc($window) {
+    function globalClickTriggerFunc() {
         return {
             restrict: 'A',
             link: function (scope) {
@@ -15,10 +15,10 @@
                 }
 
                 function cleanUp() {
-                    angular.element($window).off('click', onClick);
+                    angular.element(document).off('mous', onClick);
                 }
 
-                angular.element($window).on('click', onClick);
+                angular.element(document).on('click', onClick);
                 scope.$on('$destroy', cleanUp);
 
             }
